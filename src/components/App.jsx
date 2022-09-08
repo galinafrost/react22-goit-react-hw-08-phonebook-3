@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import useAuth from 'shared/hooks/useAuth';
 
 import { current } from '../redux/auth/auth-operations';
 
@@ -9,9 +10,13 @@ import UserRoutes from './UserRoutes';
 export const App = () => {
   const dispatch = useDispatch();
 
+  const isLogin = useAuth();
+
   useEffect(() => {
-    dispatch(current());
-  }, [dispatch]);
+    if (isLogin) {
+      dispatch(current());
+    }
+  }, [isLogin, dispatch]);
 
   return (
     <div>
