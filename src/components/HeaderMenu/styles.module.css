@@ -1,0 +1,19 @@
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  color: red;
+  padding: 10px 15px;
+  border: 1px solid red;
+}
+
+.linkActive {
+  composes: link;
+  color: #fff;
+  background-color: red;
+}
